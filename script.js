@@ -1,4 +1,4 @@
-function nrandom (minimo, maximo){
+function nrandom (minimo, maximo){                                            //--> Random number gen
     let number =  Math.floor(Math.random() * (maximo - minimo + 1) + minimo)
     return number;
  }
@@ -15,7 +15,7 @@ let computerSelection;
 let computerScore = 0
 let userScore = 0
 
-function round (userSelection, computerSelection){
+function round (userSelection, computerSelection){                        //--> Play round
     computerSelection = nrandom(0,2)
     userSelection = prompt(`Select your tool \nScissrs: 0\nPaper: 1\nRock: 2`)
     alert(`You select: ${options[userSelection]}`)
@@ -65,7 +65,7 @@ else if (userSelection == rock){
 
 
 
-function game(){
+function game(){                                                       //--> Play 5 times
 
 
 for (let i = 0; i < 5; i++) {
