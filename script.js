@@ -31,6 +31,30 @@ function button (tool){
 }
 
 
+function result(winner){
+    if (winner == "user"){
+        userScore++
+        const userWin = document.querySelector('.user-score');
+        userWin.textContent = `Your score: ${userScore}`;
+
+        const who = document.querySelector('.winner');
+        who.textContent = `You won!`;
+
+    }
+    else if (winner == "computer"){
+        computerScore++
+        const pcWin = document.querySelector('.computer-score');
+        pcWin.textContent = `Computer score: ${computerScore}`;
+
+        const who = document.querySelector('.winner');
+        who.textContent = `You lose :(`;
+
+    }
+    else {
+        const who = document.querySelector('.winner');
+        who.textContent = `It's a Tie`;
+    }
+}
 
 
 
@@ -38,46 +62,44 @@ function button (tool){
 
 function round (computerSelection){                        //--> Play round
     computerSelection = nrandom(0,2)
-    //userSelection = button()
-    alert(`You select: ${options[userSelection]}`)
-    alert(`Computer select: ${options[computerSelection]}`)
+
+    const userTool = document.querySelector('.user-choose');
+    userTool.textContent = `Player: ${options[userSelection]}`;
+
+    const computerTool = document.querySelector('.computer-choose')
+    computerTool.textContent = `Computer: ${options[computerSelection]}`
+
 if (userSelection == scissrs){
     if (computerSelection == scissrs){
-        alert ("It's a Tie")
+        result("tie")
         }
     else if (computerSelection == paper){
-        alert ("You Win :D")
-        userScore++
+        result("user")
     }
     else if (computerSelection == rock){
-        alert("You lose :(")
-        computerScore++
+        result("computer")
     }
 }
 else if (userSelection == paper){
     if (computerSelection == paper){
-        alert ("It's a Tie")
+        result("tie")
         }
     else if (computerSelection == rock){
-        alert ("You Win :D")
-        userScore++
+        result("user")
     }
     else if (computerSelection == scissrs){
-        alert("You lose :(")
-        computerScore++
+        result("computer")
     }
 }
 else if (userSelection == rock){
     if (computerSelection == rock){
-    alert ("It's a Tie")
+        result("tie")
     }
     else if (computerSelection == scissrs){
-        alert ("You Win :D")
-        userScore++
+        result("user")
     }
     else if (computerSelection == paper){
-        alert("You lose :(")
-        computerScore++
+        result("computer")
     }
 }
 }
