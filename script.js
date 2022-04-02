@@ -15,9 +15,30 @@ let computerSelection;
 let computerScore = 0
 let userScore = 0
 
-function round (userSelection, computerSelection){                        //--> Play round
+function button (tool){
+    if (tool == 0){
+        userSelection = scissrs
+        round()
+    }
+    else if (tool == 1){
+        userSelection = paper
+        round()
+    }
+    else if (tool == 2){
+        userSelection = rock
+        round()
+    }
+}
+
+
+
+
+
+
+
+function round (computerSelection){                        //--> Play round
     computerSelection = nrandom(0,2)
-    userSelection = prompt(`Select your tool \nScissrs: 0\nPaper: 1\nRock: 2`)
+    //userSelection = button()
     alert(`You select: ${options[userSelection]}`)
     alert(`Computer select: ${options[computerSelection]}`)
 if (userSelection == scissrs){
@@ -61,27 +82,24 @@ else if (userSelection == rock){
 }
 }
 
+// round()
 
 
 
+// function game(){                                                       //--> Play 5 times
 
-function game(){                                                       //--> Play 5 times
 
-
-for (let i = 0; i < 5; i++) {
-    round(userSelection, computerSelection)
- }
- document.write(`User: ${userScore} <br> Computer: ${computerScore} <br>`)
- if (computerScore > userScore){
-    document.write("Sorry you lost the game :(")
- }
- else if (userScore > computerScore){
-    document.write("Nice you won the game!")
- }
- else if (userScore == computerScore){
-    document.write("it's a Tie")
- }
-}
-
-game()
-
+// for (let i = 0; i < 5; i++) {
+//     round(userSelection, computerSelection)
+//  }
+//  document.write(`User: ${userScore} <br> Computer: ${computerScore} <br>`)
+//  if (computerScore > userScore){
+//     document.write("Sorry you lost the game :(")
+//  }
+//  else if (userScore > computerScore){
+//     document.write("Nice you won the game!")
+//  }
+//  else if (userScore == computerScore){
+//     document.write("it's a Tie")
+//  }
+// }
