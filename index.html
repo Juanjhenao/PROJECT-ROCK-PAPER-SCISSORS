@@ -2,23 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>project</title>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <header>
+    <h1 class="title">Rock Paper Scissors</h1>
+    </header>
+
+    <!-- <div id="modal-container" class="modal-box">
+        <div class="modal">
+        <h1 class="title-modal">Best of</h1>
+                <div class="modal-flexbox">
+                    <button>
+                        <p onclick="numberOf(3)" class="button-modal button" >3</p>
+                    </button>
+                    <button>
+                        <p onclick="numberOf(5)" class="button-modal button" >5</p>
+                    </button>
+                    <button>
+                        <p onclick="numberOf(10)" class="button-modal button" >10</p>
+                    </button>
+                </div>
+        </div>
+
+
+    </div> -->
+    <section>
     <div class="results">
         <p class="winner">Choose your tool</p>
-        <p class="user-choose"></p>
-        <p class="computer-choose"></p>
-        <p class="user-score" >Your score: </p>
-        <p class="computer-score" >Computer score: </p>
+        <div class="flexbox">
+            <img id="user-choose" src="images/randombox.png" alt="">
+            <img id="computer-choose" src="images/randombox.png" alt="">
+        </div>
+        <div class="flexbox">
+            <p class="user-score" >Player: 0 </p>
+            <p class="computer-score" >Computer: 0 </p>
+        </div>
+            <p class="final-winner"></p>
+        
     </div>
-    <button onclick="button(2)" class="rock">Rock</button>
-    <button onclick="button(1)" class="paper">Paper</button>
-    <button onclick="button(0)" class="scissrs">Scissrs</button>
-    
+    </section>
+    <section>
+    <div class="flexbox-buttons">
+    <button  onclick="button(2)">
+        <img src="images/rock.png" alt="rock" class="rock button" >
+    </button>
+    <button onclick="button(1)">
+    <img src="images/paper.png" alt="paper" class="paper button">
+    </button>
+    <button onclick="button(0)">
+    <img src="images/scissors.png" alt="scissrs" class="scissrs button">
+    </button>
+    </div>
+    <footer>
+
+    </footer>
+</div>
 
 
 <script src="script.js"></script>
