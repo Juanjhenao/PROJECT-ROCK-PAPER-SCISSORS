@@ -37,23 +37,31 @@ function closeModal(){
     const closeModal = document.getElementById('modal-container');
     closeModal.classList.remove('show');
 }
-
-
-
 const bestOf3 = document.querySelector('.best3');
+const buttonsY = document.querySelectorAll('.img.button')
+    
 bestOf3.addEventListener('click', ()=> {
     closeModal();
     games = 3;
+    for (let index of buttonsY){
+    index.classList.toggle('show_button')
+    }
 });
 const bestOf5 = document.querySelector('.best5');
 bestOf5.addEventListener('click', ()=> {
     closeModal();
     games = 5;
+    for (let index of buttonsY){
+        index.classList.toggle('show_button')
+        }
 });
 const bestOf10 = document.querySelector('.best10');
 bestOf10.addEventListener('click', ()=> {
     closeModal()
     games = 10;
+    for (let index of buttonsY){
+        index.classList.toggle('show_button')
+        }
 });
 function restart (){
     const userWin = document.querySelector('.user-score');      //--> prevents the page from displaying
