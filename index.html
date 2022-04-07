@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +35,8 @@
     <div class="results">
         <p class="winner">Choose your tool</p>
         <div class="flexbox">
-            <img id="user-choose" src="images/randombox.png" alt="">
-            <img id="computer-choose" src="images/randombox.png" alt="">
+            <img id="user-choose" class="img" src="images/randombox.png" alt="">
+            <img id="computer-choose" class="img" src="images/randombox.png" alt="">
         </div>
         <div class="flexbox">
             <p class="user-score" >Player: 0 </p>
@@ -48,13 +49,13 @@
     <section>
     <div class="flexbox-buttons">
     <button  onclick="button(2)">
-        <img src="images/rock.png" alt="rock" class="rock button" >
+        <img src="images/rock.png" alt="rock" class="img button" >
     </button>
     <button onclick="button(1)">
-    <img src="images/paper.png" alt="paper" class="paper button">
+    <img src="images/paper.png" alt="paper" class="img button">
     </button>
     <button onclick="button(0)">
-    <img src="images/scissors.png" alt="scissrs" class="scissrs button">
+    <img src="images/scissors.png" alt="scissrs" class="img button">
     </button>
     </div>
     <section id="modal-container2" class="modal-box">
@@ -67,8 +68,8 @@
                 </div>
         </div>
     </section>
-    <footer>
-
+    <footer class="fondo">
+        <a href="http://github.com/Juanjhenao" target="_blank" rel="noopener noreferrer">Copyright © 2022 Juanjhenao</a>
     </footer>
 </div>
 
