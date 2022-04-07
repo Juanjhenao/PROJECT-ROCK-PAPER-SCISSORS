@@ -3,17 +3,18 @@ function nrandom (minimo, maximo){                                            //
     return number;
  }
 
-let scissrs = 0
-let paper = 1
-let rock = 2
+let scissrs = 0;
+let paper = 1;
+let rock = 2;
 
 let options = ["Scissrs", "Paper", "Rock"];
 
 let userSelection;
 let computerSelection;
 
-let computerScore = 0
-let userScore = 0
+let games;
+let computerScore = 0;
+let userScore = 0;
 
 
 
@@ -32,35 +33,48 @@ function button (tool){
         round()
     }
 }
-
-function restart (){
-    const userWin = document.querySelector('.user-score');      //--> prevents the page from displaying
-        userWin.textContent = `Your score: 0`;                  //--> an extra sum to the score
-    const pcWin = document.querySelector('.computer-score');
-        pcWin.textContent = `Computer score: 0`;
-        window.location.reload()
-
-}
 function closeModal(){
     const closeModal = document.getElementById('modal-container');
     closeModal.classList.remove('show');
 }
 
-function numberOf(points){
-    closeModal()
-    points == rounds
-    if (userScore == rounds){
-        // const final = document.querySelector('.final-winner');
-        // final.innerHTML = `You are the definitive winner <br> Select any tool to restart`;
-        alert("hols")
-        
-    }
 
-    else if (computerScore == rounds){
-        // const final = document.querySelector('.final-winner');
-        // final.innerHTML = `you really suck at this you should do something easier, like playing ukele for example <br> Select any tool to restart`;
-        alert("p")
-    }
+
+const bestOf3 = document.querySelector('.best3');
+bestOf3.addEventListener('click', ()=> {
+    closeModal();
+    games = 3;
+});
+const bestOf5 = document.querySelector('.best5');
+bestOf5.addEventListener('click', ()=> {
+    closeModal();
+    games = 5;
+});
+const bestOf10 = document.querySelector('.best10');
+bestOf10.addEventListener('click', ()=> {
+    closeModal()
+    games = 10;
+});
+function restart (){
+    const userWin = document.querySelector('.user-score');      //--> prevents the page from displaying
+        userWin.textContent = `Player: 0`;                  //--> an extra sum to the score
+    const pcWin = document.querySelector('.computer-score');
+        pcWin.textContent = `Computer: 0`;
+        window.location.reload()
+
+}
+function numberOf(games){
+if (userScore == games){
+    const showModal = document.querySelector('#modal-container2');
+    showModal.classList.add('show');
+  }
+else if (computerScore == games){
+    const lostModal = document.querySelector('.title-modal2');
+    lostModal.textContent = "You suck at this game, you should do something easier, like being a senator for example.";
+    const showModal = document.querySelector('#modal-container2');
+    showModal.classList.add('show');
+}
+
 }
 
 function result(winner){
@@ -68,42 +82,24 @@ function result(winner){
         userScore++
         const userWin = document.querySelector('.user-score');
         userWin.textContent = `Player: ${userScore} `;
-
         const who = document.querySelector('.winner');
         who.textContent = `You won!`;
-
+        numberOf(games);
     }
     else if (winner == "computer"){
         computerScore++
         const pcWin = document.querySelector('.computer-score');
         pcWin.textContent = `Computer: ${computerScore} `;
-
         const who = document.querySelector('.winner');
         who.textContent = `You lose :(`;
-
+        numberOf(games);
     }
     else {
         const who = document.querySelector('.winner');
         who.textContent = `It's a Tie`;
     }
-}
-
-
-// function numberOf(points){                   no funciona xd
-//     if (userScore == points){
-//         alert("sos dios :v")
-//     }
-
-//     else if (computerScore == points){
-//         alert("eres una mierda :V")
-//     }
-// }
-
-// numberOf(5)
-
-
-
-    
+};
+numberOf(games);
 function userImage(image){
     if (image == "paper"){
         let userChoose = document.getElementById("user-choose");
@@ -136,13 +132,6 @@ function computerImage(image){
 function round (computerSelection){                        //--> Play round
     computerSelection = nrandom(0,2)
 
-    // const userTool = document.querySelector('.user-choose');
-    // userTool.innerHTML = `Player: ${options[userSelection]}`;
-
-    // const computerTool = document.querySelector('.computer-choose')
-    // computerTool.textContent = `Computer: ${options[computerSelection]}`
-
-  
 if (userSelection == scissrs){
     userImage("scissrs");
     if (computerSelection == scissrs){
@@ -188,26 +177,4 @@ else if (userSelection == rock){
         result("computer");
     }
 }
-}
-
-// round()
-
-
-
-// function game(){                                                       //--> Play 5 times
-
-
-// for (let i = 0; i < 5; i++) {
-//     round(userSelection, computerSelection)
-//  }
-//  document.write(`User: ${userScore} <br> Computer: ${computerScore} <br>`)
-//  if (computerScore > userScore){
-//     document.write("Sorry you lost the game :(")
-//  }
-//  else if (userScore > computerScore){
-//     document.write("Nice you won the game!")
-//  }
-//  else if (userScore == computerScore){
-//     document.write("it's a Tie")
-//  }
-// }
+};
